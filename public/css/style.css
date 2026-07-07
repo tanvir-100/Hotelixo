@@ -24,6 +24,31 @@ body{
     color: #222222 !important;
 }
 
+/* Compact auth links (smaller gap between Sign Up / Login) */
+.nav-link-auth {
+    padding-left: 0.35rem !important;
+    padding-right: 0.35rem !important;
+    margin-right: 0.2rem;
+}
+
+/* Brand word styling */
+.navbar-brand .brand-word {
+    font-weight: 700;
+    color: #222222;
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand .brand-word .highlight {
+    color: #29d4c3;
+}
+
+/* Optional: make the brand color match the globe icon on hover */
+.navbar-brand:hover .brand-word {
+    color: #29d4c3;
+}
+
 /* Footer */
 
 footer {
@@ -115,4 +140,25 @@ footer {
 .btns{
     display: flex;
     gap: 1rem;  
+}
+
+.me-2 { 
+    background-color: #8aecea !important;
+    color: black !important;
+}
+
+
+.me-1 {
+    border-color: #ff385c !important;
+    color: #ff385c !important;
+}
+
+.me-1:hover {
+    background-color: #ff385c !important;
+    color: white !important;
+}
+
+.nav-btn {
+    color: #ff385c !important;
+    text-align: center;
 }

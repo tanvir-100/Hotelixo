@@ -7,6 +7,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const ExpressError = require('./utils/ExpressError');
+const PORT = process.env.PORT || 8080;
 const session = require('express-session');
 const MongoStore = require('connect-mongo').default;
 const flash = require('connect-flash');
@@ -65,7 +66,7 @@ const sessionOptions = {
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7, // 1 week
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
-};
+}; 
 
 // app.get('/', (req, res) => {
 //     res.send("Hello World");
@@ -89,6 +90,7 @@ app.use((req, res, next) => {
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     res.locals.currUser = req.user; // Make the authenticated user available in all templates
+    res.locals.currentPath = req.path;
     next();
 });
  
@@ -122,6 +124,6 @@ app.use((err, req, res, next) => {
     // res.status(statusCode).send(message);
 });
 
-app.listen(8080, () => {
-    console.log("Server started at port 8080");
+app.listen(PORT, () => {
+    console.log(`Server started at port ${PORT}`);
 });

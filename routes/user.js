@@ -21,4 +21,9 @@ router
 
 router.get('/logout', userController.logout);
 
+// Root welcome route
+router.get('/', (req, res) => {
+    res.render('home');
+});
+
 module.exports = router; 
